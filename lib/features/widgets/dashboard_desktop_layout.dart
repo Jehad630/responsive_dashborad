@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dashborad/features/widgets/all__expenses.dart';
 
 import 'package:responsive_dashborad/features/widgets/custom_drawer.dart';
 
@@ -8,7 +9,16 @@ class DashboardDesktopLayout extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Row(children: [Expanded(child: CustomDrawer())]),
+      body: Row(
+        children: [
+          Expanded(child: CustomDrawer()),
+          SizedBox(width: 32),
+          Expanded(
+            flex: 2,
+            child: Column(children: [Expanded(child: All_Expenses())]),
+          ),
+        ],
+      ),
     );
   }
 }
