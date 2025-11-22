@@ -3,21 +3,16 @@ import 'package:responsive_dashborad/core/models/allexpenses_item_model.dart';
 import 'package:responsive_dashborad/core/utils/app_images.dart';
 import 'package:responsive_dashborad/features/widgets/all__expenses_header.dart';
 import 'package:responsive_dashborad/features/widgets/all__expenses_item.dart';
+import 'package:responsive_dashborad/features/widgets/custom_back_ground_container.dart';
 
 class All_Expenses extends StatelessWidget {
   const All_Expenses({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.all(20),
-      decoration: ShapeDecoration(
-        color: Colors.white,
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.circular(12),
-        ),
-      ),
+    return CustomBackGroundContainer(
       child: Column(
+        mainAxisAlignment: .center,
         children: [
           All_Expenses_header(),
           SizedBox(height: 16),
