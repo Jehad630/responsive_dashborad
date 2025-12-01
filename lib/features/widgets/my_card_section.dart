@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dashborad/features/widgets/dot_indicator.dart';
 import 'package:responsive_dashborad/features/widgets/my_cards_view.dart';
+import 'package:responsive_dashborad/features/widgets/transaction_history.dart';
 
 class MyCardSection extends StatefulWidget {
   const MyCardSection({super.key});
@@ -32,6 +33,8 @@ class _MyCardSectionState extends State<MyCardSection> {
         MyCards_view(pageController: pageController),
         SizedBox(height: 20),
         DotIndicator(currentIndex: currentIndex),
+        SizedBox(height: 24),
+        TransactionHistory(),
       ],
     );
   }
