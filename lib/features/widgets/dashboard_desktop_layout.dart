@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dashborad/features/widgets/all_expenses_and__quick_invoice_section.dart';
 import 'package:responsive_dashborad/features/widgets/custom_drawer.dart';
-import 'package:responsive_dashborad/features/widgets/my_cards_view.dart';
+import 'package:responsive_dashborad/features/widgets/my_card_section.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
   const DashboardDesktopLayout({super.key});
@@ -17,41 +17,6 @@ class DashboardDesktopLayout extends StatelessWidget {
 
           Expanded(child: MyCardSection()),
         ],
-      ),
-    );
-  }
-}
-
-class MyCardSection extends StatelessWidget {
-  const MyCardSection({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Column(
-      crossAxisAlignment: .start,
-      children: [
-        SizedBox(width: 420, child: Text("My Card")),
-        SizedBox(height: 20),
-        MyCards_view(),
-        SizedBox(height: 20),
-        DotIndicator(),
-      ],
-    );
-  }
-}
-
-class DotIndicator extends StatelessWidget {
-  const DotIndicator({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      children: List.generate(
-        3,
-        (index) => Padding(
-          padding: const EdgeInsets.only(right: 6.0),
-          child: CustomDotIndicator(isActive: false),
-        ),
       ),
     );
   }
