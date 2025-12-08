@@ -12,7 +12,7 @@ class AllExpenses_and_QuickInvoice_section extends StatelessWidget {
     return SingleChildScrollView(
       child: Column(
         children: [
-          SizedBox(height: 40),
+          ///SizedBox(height: 40),
           All_Expenses(),
           SizedBox(height: 24),
           QuickInvoice(),
