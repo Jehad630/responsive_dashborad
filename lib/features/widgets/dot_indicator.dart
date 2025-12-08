@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:responsive_dashborad/features/widgets/dashboard_desktop_layout.dart';
+import 'package:responsive_dashborad/features/widgets/custom_dot_indicator.dart';
 
 class DotIndicator extends StatelessWidget {
   const DotIndicator({super.key, required this.currentIndex});

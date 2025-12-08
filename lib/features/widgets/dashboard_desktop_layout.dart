@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:responsive_dashborad/features/widgets/all_expenses_and__quick_invoice_section.dart';
+import 'package:responsive_dashborad/features/widgets/custom_back_ground_container.dart';
 import 'package:responsive_dashborad/features/widgets/custom_drawer.dart';
+import 'package:responsive_dashborad/features/widgets/income_section_header.dart';
 import 'package:responsive_dashborad/features/widgets/my_card_and_transaction_history_section.dart';
 
 class DashboardDesktopLayout extends StatelessWidget {
@@ -15,28 +17,24 @@ class DashboardDesktopLayout extends StatelessWidget {
           SizedBox(width: 32),
           Expanded(flex: 2, child: AllExpenses_and_QuickInvoice_section()),
 
-          Expanded(child: MyCardAndTransactionHistorySection()),
+          Expanded(child: IncomeSection()),
         ],
       ),
     );
   }
 }
 
-class CustomDotIndicator extends StatelessWidget {
-  const CustomDotIndicator({super.key, required this.isActive});
-  final bool isActive;
+class IncomeSection extends StatelessWidget {
+  const IncomeSection({super.key});
+
   @override
   Widget build(BuildContext context) {
-    return AnimatedContainer(
-      width: isActive ? 32 : 8,
-      height: 8,
-      decoration: ShapeDecoration(
-        color: isActive ? const Color(0xFF4DB7F2) : const Color(0xFFE7E7E7),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadiusGeometry.circular(12),
-        ),
+    return CustomBackGroundContainer(
+      child: Column(
+        children: [
+          IncomeSectionHeader(),
+        ],
       ),
-      duration: Duration(microseconds: 300),
     );
   }
 }
