@@ -1,8 +1,14 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:flutter/material.dart';
 import 'package:responsive_dashborad/features/views/dash_board_view.dart';
 
 void main() {
-  runApp(const ResponSiveDashBoard());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => const ResponSiveDashBoard(),
+    ),
+  );
 }
 
 class ResponSiveDashBoard extends StatelessWidget {
@@ -10,8 +16,10 @@ class ResponSiveDashBoard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
       debugShowCheckedModeBanner: false,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
       home: DashBoardView(),
     );
   }
