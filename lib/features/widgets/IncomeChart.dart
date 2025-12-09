@@ -51,7 +51,7 @@ class _IncomeChartState extends State<IncomeChart> {
         ),
       ],
       sectionsSpace: 0,
-      centerSpaceRadius: 40,
+      centerSpaceRadius: 10,
     );
   }
 }
