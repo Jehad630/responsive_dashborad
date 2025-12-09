@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:responsive_dashborad/core/utils/app_styles.dart';
 import 'package:responsive_dashborad/features/widgets/dot_indicator.dart';
 import 'package:responsive_dashborad/features/widgets/my_cards_view.dart';
 
@@ -27,7 +28,7 @@ class _MyCardSectionState extends State<MyCardSection> {
     return Column(
       crossAxisAlignment: .start,
       children: [
-        SizedBox(width: 420, child: Text("My Card")),
+        SizedBox(width: 420, child: Text("My Card",style: AppStyles.styleSemiBold20(context),)),
         SizedBox(height: 20),
         MyCards_view(pageController: pageController),
         SizedBox(height: 20),
