@@ -24,12 +24,8 @@ class IncomeDetalis extends StatelessWidget {
   ];
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      shrinkWrap: true,
-      itemCount: items.length,
-      itemBuilder: (context, index) {
-        return ItemsDetalis(item: items[index]);
-      },
+    return Column(
+      children: items.map((item) => ItemsDetalis(item: item)).toList(),
     );
   }
 }
