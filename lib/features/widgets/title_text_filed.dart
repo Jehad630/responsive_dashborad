@@ -8,11 +8,13 @@ class TitleTextFiled extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: .start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text("Customert Name", style: AppStyles.styleMedium16(context)),
-        SizedBox(height: 12),
-        CustomTextField(hint: hint,),
+        const SizedBox(height: 12),
+        CustomTextField(
+          hint: hint,
+        ),
       ],
     );
   }

@@ -9,16 +9,16 @@ class TransactionHistory extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: .start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        TransactionHistoryHeader(),
+        const TransactionHistoryHeader(),
         Text(
           "1 Dec 2025",
           style: AppStyles.styleMedium16(
             context,
           ).copyWith(color: Color(0xFFAAAAAA)),
         ),
-        TransactionHistory_ListView(),
+        const TransactionHistory_ListView(),
       ],
     );
   }

@@ -6,13 +6,13 @@ void main() {
   runApp(
     DevicePreview(
       enabled: true,
-      builder: (context) => const ResponSiveDashBoard(),
+      builder: (context) => const ResponsiveDashboard(),
     ),
   );
 }
 
-class ResponSiveDashBoard extends StatelessWidget {
-  const ResponSiveDashBoard({super.key});
+class ResponsiveDashboard extends StatelessWidget {
+  const ResponsiveDashboard({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +20,7 @@ class ResponSiveDashBoard extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       locale: DevicePreview.locale(context),
       builder: DevicePreview.appBuilder,
-      home: DashBoardView(),
+      home: const DashBoardView(),
     );
   }
 }

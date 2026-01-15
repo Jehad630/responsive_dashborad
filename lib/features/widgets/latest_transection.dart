@@ -9,13 +9,13 @@ class Latest_transection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: .start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text("Latest Transection", style: AppStyles.styleMedium16(context)),
-        SizedBox(height: 16),
-        Latest_transection_ListView(),
-        Divider(height: 48, color: Colors.grey),
-        Quick_Invoice_form(),
+        const SizedBox(height: 16),
+        const Latest_transection_ListView(),
+        const Divider(height: 48, color: Colors.grey),
+        const Quick_Invoice_form(),
       ],
     );
   }

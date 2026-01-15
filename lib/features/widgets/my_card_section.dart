@@ -15,26 +15,37 @@ class _MyCardSectionState extends State<MyCardSection> {
   int currentIndex = 0;
   @override
   void initState() {
+    super.initState();
     pageController = PageController();
     pageController.addListener(() {
       currentIndex = pageController.page!.round();
       setState(() {});
     });
-    super.initState();
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
   }
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      crossAxisAlignment: .start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SizedBox(width: 420, child: Text("My Card",style: AppStyles.styleSemiBold20(context),)),
-        SizedBox(height: 20),
+        SizedBox(
+          width: 420,
+          child: Text(
+            "My Card",
+            style: AppStyles.styleSemiBold20(context),
+          ),
+        ),
+        const SizedBox(height: 20),
         MyCards_view(pageController: pageController),
-        SizedBox(height: 20),
+        const SizedBox(height: 20),
         DotIndicator(currentIndex: currentIndex),
-        SizedBox(height: 24),
-        
+        const SizedBox(height: 24),
       ],
     );
   }

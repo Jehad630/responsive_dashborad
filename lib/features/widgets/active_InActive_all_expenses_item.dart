@@ -10,26 +10,10 @@ class InActiveAllExpensesItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 16),
-      decoration: ShapeDecoration(
-        shape: RoundedRectangleBorder(
-          side: BorderSide(color: Color(0xFFF1F1F1), width: 1),
-          borderRadius: BorderRadius.circular(16),
-        ),
-      ),
-      child: Column(
-        crossAxisAlignment: .start,
-        children: [
-          All_Expenses_item_header(image: itemModel.image),
-          SizedBox(height: 34),
-          Text(itemModel.title, style: AppStyles.styleMedium16(context)),
-          SizedBox(height: 8),
-          Text(itemModel.date, style: AppStyles.styleRegular14(context)),
-          SizedBox(height: 8),
-          Text(itemModel.price, style: AppStyles.styleSemiBold24(context)),
-        ],
-      ),
+    return AllExpensesItemCard(
+      itemModel: itemModel,
+      borderColor: const Color(0xFFF1F1F1),
+      horizontalPadding: 10,
     );
   }
 }
@@ -41,23 +25,45 @@ class ActiveAllExpensesItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return AllExpensesItemCard(
+      itemModel: itemModel,
+      borderColor: const Color(0xFF4DB7F2),
+      horizontalPadding: 20,
+    );
+  }
+}
+
+class AllExpensesItemCard extends StatelessWidget {
+  const AllExpensesItemCard({
+    super.key,
+    required this.itemModel,
+    required this.borderColor,
+    required this.horizontalPadding,
+  });
+
+  final AllexpensesItemModel itemModel;
+  final Color borderColor;
+  final double horizontalPadding;
+
+  @override
+  Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(horizontal: 20, vertical: 16),
+      padding: EdgeInsets.symmetric(horizontal: horizontalPadding, vertical: 16),
       decoration: ShapeDecoration(
         shape: RoundedRectangleBorder(
-          side: BorderSide(color: Color(0xFF4DB7F2), width: 1),
+          side: BorderSide(color: borderColor, width: 1),
           borderRadius: BorderRadius.circular(16),
         ),
       ),
       child: Column(
-        crossAxisAlignment: .start,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          All_Expenses_item_header(image: itemModel.image),
-          SizedBox(height: 34),
+          AllExpensesItemHeader(image: itemModel.image),
+          const SizedBox(height: 34),
           Text(itemModel.title, style: AppStyles.styleMedium16(context)),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(itemModel.date, style: AppStyles.styleRegular14(context)),
-          SizedBox(height: 8),
+          const SizedBox(height: 8),
           Text(itemModel.price, style: AppStyles.styleSemiBold24(context)),
         ],
       ),
